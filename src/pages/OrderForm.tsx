@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,11 +8,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Upload, ArrowLeft, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const OrderForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState("pro");
   const [formData, setFormData] = useState({
@@ -83,18 +83,8 @@ const OrderForm = () => {
           description: "Kami akan hubungi anda dalam masa 24 jam. Terima kasih!",
         });
         
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          whatsapp: "",
-          businessName: "",
-          productInfo: "",
-          targetAudience: "",
-          designStyle: "",
-          additionalNotes: "",
-          urgentDelivery: false
-        });
+        // Navigate to thank you page instead of resetting form
+        navigate('/thank-you');
       } else {
         throw new Error("Webhook call failed");
       }
@@ -105,6 +95,9 @@ const OrderForm = () => {
         description: "Maklumat anda telah direkodkan. Kami akan hubungi anda segera.",
         variant: "default",
       });
+      
+      // Navigate to thank you page even on error
+      navigate('/thank-you');
     } finally {
       setIsSubmitting(false);
     }
