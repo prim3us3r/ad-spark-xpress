@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, ArrowRight, Zap, Users, Clock, Star, TrendingUp } from "lucide-react";
@@ -143,12 +142,23 @@ const Index = () => {
           <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed">
             Bayangkan duit iklan anda menguap begitu saja sebab design tak menarik. Klien ignore, pesaing melangkah jauh—rasanya sakit kan?
           </p>
-          <p className="text-2xl font-bold text-blue-600 mb-8">
+          <p className="text-2xl font-bold text-blue-600 mb-4">
             Tukar Buang Duit Jadi Untung Berganda!
           </p>
           <p className="text-lg text-gray-700 mb-8">
             Tempah AI-Powered Facebook Ad Design yang <strong>terbukti naikkan ROI</strong> untuk market Malaysia.
           </p>
+          
+          {/* Social Proof */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center space-x-2 text-green-700">
+              <Users className="h-6 w-6" />
+              <span className="text-lg font-semibold">
+                500++ usahawan telah dibantu oleh servis kami
+              </span>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link to="/order">
               <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 text-lg">
@@ -196,49 +206,6 @@ const Index = () => {
               "Leverage design XpressAdz, CTR naik mendadak, sales follow!"
             </blockquote>
             <cite className="font-bold text-blue-600">– Aiman, Founder @ GadgetGo</cite>
-          </div>
-        </div>
-      </section>
-
-      {/* Psychology Drivers */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              3 Pemacu Psikologi Kami:
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-red-600">Loss Aversion</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Rasa sakit kerugian lebih tajam. Kami pastikan tiada RM dibazirkan.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-orange-600">Scarcity & Urgency</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Slot mingguan <strong>super terhad</strong>. Delay = pesaing ambil giliran.
-                </CardDescription>
-              </CardContent>
-            </Card>
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-green-600">Social Proof</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  500+ bisnes dah bukti keberkesanan kita.
-                </CardDescription>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
