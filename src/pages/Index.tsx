@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CheckCircle, ArrowRight, Zap, Users, Clock, Star, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -149,13 +150,51 @@ const Index = () => {
             Tempah AI-Powered Facebook Ad Design yang <strong>terbukti naikkan ROI</strong> untuk market Malaysia.
           </p>
           
-          {/* Social Proof */}
-          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center space-x-2 text-green-700">
-              <Users className="h-6 w-6" />
-              <span className="text-lg font-semibold">
-                500++ usahawan telah dibantu oleh servis kami
-              </span>
+          {/* Enhanced Social Proof with Faces */}
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-8 max-w-3xl mx-auto shadow-lg">
+            <div className="flex flex-col items-center space-y-4">
+              {/* Avatar Stack */}
+              <div className="flex -space-x-3">
+                <Avatar className="w-12 h-12 border-2 border-white shadow-md">
+                  <AvatarImage src="/lovable-uploads/fa9a2e20-863d-43e4-9436-d199bbbaf517.png" alt="Customer 1" />
+                  <AvatarFallback className="bg-blue-500 text-white">S</AvatarFallback>
+                </Avatar>
+                <Avatar className="w-12 h-12 border-2 border-white shadow-md">
+                  <AvatarImage src="/lovable-uploads/5c669111-8d51-4a8f-9527-4ff5d252dbeb.png" alt="Customer 2" />
+                  <AvatarFallback className="bg-green-500 text-white">R</AvatarFallback>
+                </Avatar>
+                <Avatar className="w-12 h-12 border-2 border-white shadow-md">
+                  <AvatarImage src="/lovable-uploads/dcd6a2c8-f4a7-434b-bfd9-9b8605a20afa.png" alt="Customer 3" />
+                  <AvatarFallback className="bg-purple-500 text-white">N</AvatarFallback>
+                </Avatar>
+                <Avatar className="w-12 h-12 border-2 border-white shadow-md">
+                  <AvatarImage src="/lovable-uploads/cc8838f0-4783-463e-bde5-7d737994005e.png" alt="Customer 4" />
+                  <AvatarFallback className="bg-orange-500 text-white">A</AvatarFallback>
+                </Avatar>
+                <Avatar className="w-12 h-12 border-2 border-white shadow-md">
+                  <AvatarImage src="/lovable-uploads/96879888-241b-4d69-aa11-2f61e1abd03e.png" alt="Customer 5" />
+                  <AvatarFallback className="bg-red-500 text-white">M</AvatarFallback>
+                </Avatar>
+                <div className="w-12 h-12 border-2 border-white shadow-md rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">+500</span>
+                </div>
+              </div>
+              
+              {/* Social Proof Text */}
+              <div className="text-center">
+                <p className="text-lg font-semibold text-gray-800 mb-1">
+                  Bergabung dengan <span className="text-blue-600 font-bold">500++</span> usahawan yang telah dibantu
+                </p>
+                <div className="flex items-center justify-center space-x-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
+                  ))}
+                  <span className="text-sm text-gray-600 ml-2">4.9/5 (248 reviews)</span>
+                </div>
+                <p className="text-sm text-gray-600">
+                  "Design yang power, ROI yang proven!" 🚀
+                </p>
+              </div>
             </div>
           </div>
 
